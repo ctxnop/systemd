@@ -85,10 +85,10 @@ typedef void (*_sd_destroy_t)(void *userdata);
 #endif
 
 #ifndef _SD_ARRAY_STATIC
-#  if __STDC_VERSION__ >= 199901L
-#    define _SD_ARRAY_STATIC static
-#  else
+#  if __STDC_VERSION__ < 199901L or defined(__cplusplus)
 #    define _SD_ARRAY_STATIC
+#  else
+#    define _SD_ARRAY_STATIC static
 #  endif
 #endif
 
